@@ -19,7 +19,7 @@ public class ReciboDialogController  {
 				+ "\n\n----------------------------------------------------"
 				+ "\n\nNome do Cliente: " + encomenda.getCliente()
 				+ "\tTelefone: " + encomenda.getCliente().getTelefone()
-				+ "\nPreço: " + encomenda.getPreco()
+				+ "\nPreÃ§o: " + encomenda.getPreco()
 				+ "\tPrevisao de Entrega: " + encomenda.getEntrega()
 				+ "\nValor do Sinal: " + String.format("R$%.2f", encomenda.getSinal())
 		);

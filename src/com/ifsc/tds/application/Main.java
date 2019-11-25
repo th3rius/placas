@@ -15,10 +15,17 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	@Override public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("/com/ifsc/tds/view/Login.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/com/ifsc/tds/view/RootSistema.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setTitle("Placas");
 			primaryStage.getIcons().add(new Image("file:resources/images/stop.png"));
+			primaryStage.setOnCloseRequest(e -> {
+				if (onCloseQuery()) {
+					System.exit(0);
+				} else {
+					e.consume();
+				}
+			});
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {

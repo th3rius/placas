@@ -47,7 +47,7 @@ public class PlacaDialogController implements Initializable {
     @FXML private ChoiceBox<String> cbxCorFrase;
     @FXML private Rectangle placa;
     @FXML private Label lblFrasePlaca;
-    @FXML private Label lblPreço;
+    @FXML private Label lblPreÃ§o;
     @FXML private TextField txtSinal;
     @FXML private ChoiceBox<Cliente> cbxCliente;
     @FXML private Label lblEntrega;
@@ -129,7 +129,7 @@ public class PlacaDialogController implements Initializable {
     double calcularPreco() {
     	double area = (Double.parseDouble(txtAltura.getText()) * Double.parseDouble(txtLargura.getText()));
     	double preco = (area * 147.3) + (txtFrase.getText().length() * 0.32);
-    	lblPreço.setText("Preço: " + String.format("R$%.2f", preco));
+    	lblPreÃ§o.setText("PreÃ§o: " + String.format("R$%.2f", preco));
     	return preco;
     }
     
@@ -151,13 +151,13 @@ public class PlacaDialogController implements Initializable {
     @FXML void confirmar(ActionEvent event) throws IOException {
      	if(Double.parseDouble(txtSinal.getText()) < calcularPreco()/2) {
     		Alert alert = new Alert(Alert.AlertType.WARNING);
-    		alert.setHeaderText("O valor do sinal precisa ser no mínimo 50% do preço.");
+    		alert.setHeaderText("O valor do sinal precisa ser no mÃ­nimo 50% do preÃ§o.");
     		alert.showAndWait();
     		return;
     	}
      	if(Double.parseDouble(txtSinal.getText()) > calcularPreco()) {
     		Alert alert = new Alert(Alert.AlertType.WARNING);
-    		alert.setHeaderText("O valor do sinal excede o preço da placa.");
+    		alert.setHeaderText("O valor do sinal excede o preÃ§o da placa.");
     		alert.showAndWait();
     		return;
     	}
